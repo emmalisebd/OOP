@@ -9,7 +9,8 @@ class Coin:  # name of class should start with upper case letter
     # sideup data attribute with 'Heads'.
 
     def __init__(self):     # init creates attributes for the object
-        self.sideup = 'Heads'  # setting value of sideup to Heads
+        self.__sideup = 'Heads'  # setting value of sideup to Heads
+        # __ make the attribute hidden/private - must change them all to private for consistency
 
     # The toss method generates a random number
     # in the range of 0 through 1. If the number
@@ -18,14 +19,14 @@ class Coin:  # name of class should start with upper case letter
 
     def toss(self):
         if random.randint(0, 1) == 0:
-            self.sideup = 'Heads'
+            self.__sideup = 'Heads'
         else:
-            self.sideup = 'Tails'
+            self.__sideup = 'Tails'
 
     # The get_sideup method returns the value
     # referenced by sideup.
 
     def get_sideup(self):
-        return self.sideup
+        return self.__sideup
 
         # get / accessor methods return the value of an attribute
